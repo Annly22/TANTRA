@@ -497,14 +497,116 @@ body {
   color: #f1e9ff;
   line-height: 1.5;
 }
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* ========================= */
+/* LARGE TABLETS & SMALL LAPTOPS */
+/* ========================= */
+@media (max-width: 1200px) {
+
+  .about-section {
+    padding: 80px 60px;
+  }
+
   .about-container {
-    flex-direction: column;
-    text-align: center;
+    flex-wrap: wrap;            /* KEY FIX */
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .about-text {
+    max-width: 100%;
   }
 
   .slider-wrapper {
     width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider-track {
+    justify-content: center;
   }
 }
+
+
+/* ========================= */
+/* TABLETS */
+/* ========================= */
+@media (max-width: 992px) {
+
+  .about-text h1 {
+    font-size: 38px;
+  }
+
+  .slider-wrapper {
+    overflow-x: auto;           /* swipe enabled */
+  }
+
+  .slider-track {
+    justify-content: flex-start;
+    padding: 10px 0;
+  }
+
+  .card.big,
+  .card.small {
+    width: 280px;
+    transform: scale(1);
+  }
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .about-section {
+    padding: 60px 25px;
+  }
+
+  .about-container {
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-text h1 {
+    font-size: 34px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+  }
+
+  .card.big,
+  .card.small {
+    width: 260px;
+  }
+}
+
+
+/* ========================= */
+/* SMALL PHONES */
+/* ========================= */
+@media (max-width: 480px) {
+
+  .about-text h1 {
+    font-size: 28px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .card.big,
+  .card.small {
+    width: 230px;
+  }
+
+  .card-desc h3 {
+    font-size: 14px;
+  }
+
+  .card-desc p {
+    font-size: 12px;
+  }
+}
+
