@@ -401,7 +401,7 @@ body {
   width: 290px;
 }
   .get-started-btn {
-    transform: none !important; /* only mobile */
+    transform: none !important;
     margin: 16px auto 0;
     display: block;
     margin-top: 120px;
@@ -486,7 +486,7 @@ body {
 
   .get-started-btn {
     transform: none !important;
-    margin-top: 125px; 
+    margin-top: 160px; 
   }
   .register-btn{
    padding: 0.35rem 0.7rem; 
@@ -551,7 +551,7 @@ body {
 
   .get-started-btn {
     transform: none !important; 
-    margin-top: 125px; 
+    margin-top: 160px; 
   }
   .register-btn{
    padding: 0.35rem 0.7rem;
@@ -762,5 +762,6 @@ body {
     font-size: 12px;
   }
 }
+
 
 
