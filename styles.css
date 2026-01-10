@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -141,12 +142,16 @@ body {
 /* Hero */
 .hero {
   position: relative; 
+  overflow: hidden;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   margin-top: 60px;
+  max-width: 1600px;   /* 👈 ADD HERE */
+  margin-left: auto;   /* 👈 ADD HERE */
+  margin-right: auto; 
 }
 .cta-layer {
   position: absolute; 
@@ -307,7 +312,7 @@ body {
   pointer-events: none;
 }
 .glow-blue {
-  position: fixed;
+  position: absolute;
   width: 622px;
   height: 622px;
   top: -255px;
@@ -324,7 +329,7 @@ body {
   animation-delay: 0.15s;
 }
 .glow-pink {
-  position: fixed;
+  position: absolute;
   width: 622px;
   height: 622px;
   top: 305px;
@@ -401,7 +406,7 @@ body {
   width: 290px;
 }
   .get-started-btn {
-    transform: none !important;
+    transform: none !important; /* only mobile */
     margin: 16px auto 0;
     display: block;
     margin-top: 120px;
@@ -438,7 +443,8 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    margin: 0 auto 16px
+    margin: 0 auto 16px;
+    
   }
   .title-text {
     content: url("assets/tan tra_phone.png");
@@ -560,10 +566,16 @@ body {
   }
 }
 @media (min-width: 881px) {
-  .cta-layer {
-    transform: translateX(-50%) translateX(515px) translateY(-230px);
+   .cta-layer {
+    position: absolute;
+    top: calc(68% + 20px);
+    left: calc(54.5% + 370px + 10px); /* title-26 left + width + 10px */
+    transform: translateY(-50%);
   }
 }
+
+
+
 /* about-us */
 .about-section {
   padding: 90px 180px;
@@ -735,6 +747,9 @@ body {
   .card.small {
     width: 260px;
   }
+  .about-section {
+  padding-top: 30px;
+}
 }
 
 
@@ -764,7 +779,5 @@ body {
     font-size: 12px;
   }
 }
-
-
 
 
