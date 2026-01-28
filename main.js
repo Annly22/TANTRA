@@ -1,28 +1,57 @@
 const slider = document.getElementById("slider");
+let cards = Array.from(slider.children);
 
-setInterval(() => {
-  const cards = document.querySelectorAll(".card");
+// clone first & last for seamless loop
+const firstClone = cards[0].cloneNode(true);
+const lastClone = cards[cards.length - 1].cloneNode(true);
 
-  slider.style.transform = "translateX(-380px)";
+slider.appendChild(firstClone);
+slider.insertBefore(lastClone, cards[0]);
+cards = Array.from(slider.children);
 
-  setTimeout(() => {
-    slider.appendChild(cards[0]);
-    slider.style.transition = "none";
-    slider.style.transform = "translateX(0)";
+let index = 1;
+let gap = window.innerWidth <= 768 ? 20 : 40;
 
-    document.querySelectorAll(".card").forEach(card => {
-      card.classList.remove("big");
-      card.classList.add("small");
-    });
+function updatePosition() {
+  const active = cards[index];
+  const cardWidth = active.offsetWidth;
+  gap = window.innerWidth <= 768 ? 20 : 40;
 
-    const updatedCards = document.querySelectorAll(".card");
-    updatedCards[0].classList.remove("small");
-    updatedCards[0].classList.add("big");
+  slider.style.transition = "none";
+  slider.style.transform =
+    `translateX(calc(50% - ${(index * (cardWidth + gap)) + cardWidth / 2}px))`;
+}
 
-    setTimeout(() => {
-      slider.style.transition = "transform 0.5s ease-in-out";
-    }, 40);
+updatePosition();
 
-  }, 800);
+function nextSlide() {
+  index++;
+  slider.style.transition = "transform 0.6s ease-in-out";
 
-}, 2500);
+  const active = cards[index];
+  const cardWidth = active.offsetWidth;
+
+  slider.style.transform =
+    `translateX(calc(50% - ${(index * (cardWidth + gap)) + cardWidth / 2}px))`;
+}
+
+slider.addEventListener("transitionend", () => {
+  if (index === cards.length - 1) {
+    index = 1;
+    updatePosition();
+  }
+  if (index === 0) {
+    index = cards.length - 2;
+    updatePosition();
+  }
+
+  cards.forEach(c => {
+    c.classList.remove("big");
+    c.classList.add("small");
+  });
+  cards[index].classList.remove("small");
+  cards[index].classList.add("big");
+});
+
+setInterval(nextSlide, 2500);
+window.addEventListener("resize", updatePosition);
