@@ -633,7 +633,7 @@ body {
   font-size: 56px;
   font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.02em;  /* important */
+  letter-spacing: -0.02em;  
   white-space: nowrap;
 }
 
@@ -673,6 +673,8 @@ body {
   justify-content: center;
   position: relative;
   padding: 40px 0; 
+  contain: layout paint;
+  will-change: transform;
 }
 
 .slider-track {
@@ -731,85 +733,87 @@ body {
   line-height: 1.5;
 }
 
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
 
-/* LARGE TABLETS */
-@media (max-width: 1200px) {
+/* Tablets */
+@media (max-width: 1024px) {
   .about-section {
-    padding: 80px 60px;
+    padding: 80px 40px;
   }
 
   .about-container {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-title {
+    font-size: 44px;
+    white-space: normal;
+  }
+
+  .about-desc {
+    font-size: 16px;
   }
 
   .slider-wrapper {
     width: 100%;
-    display: flex;
-    justify-content: center;
   }
 }
 
-/* TABLETS */
-@media (max-width: 992px) {
-  .about-text h1 {
-    font-size: 38px;
-  }
-}
-
-/* MOBILE */
-/* ===== ABOUT MOBILE CARD PROJECTION ===== */
+/* Phones */
 @media (max-width: 768px) {
 
-  .about-section .slider-wrapper {
-    width: 100%;
+  .slider-wrapper {
+    width: 100vw;
     overflow: hidden;
-    position: relative;
-  }
-
-  .about-section .slider-track {
     display: flex;
     justify-content: center;
+  }
+
+  .slider-track {
+    display: flex;
+    align-items: center;
     gap: 16px;
   }
 
-  .about-section .card {
-    transition: transform 0.4s ease, opacity 0.4s ease;
+  .card {
+    flex-shrink: 0;
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .about-section .card.big {
-    transform: scale(1.1);
+  .card.big {
+    width: 260px;
+    transform: scale(1.15);
     z-index: 3;
     opacity: 1;
   }
 
-  .about-section .card.small {
-    transform: scale(0.85);
-    opacity: 0.6;
+  .card.small {
+    width: 180px;
+    transform: scale(0.8);
+    opacity: 0.5;
   }
 }
 
-
-/* SMALL PHONES */
+/* Small phones */
 @media (max-width: 480px) {
-  .about-text h1 {
-    font-size: 28px;
+  .about-title {
+    font-size: 26px;
   }
 
-  .about-text p {
+  .about-desc {
     font-size: 14px;
   }
 
-  .card h3 {
-    font-size: 14px;
+  .card.big {
+    width: 220px;
   }
 
-  .card p {
-    font-size: 12px;
+  .card.small {
+    width: 170px;
   }
 }
 
