@@ -8,11 +8,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Prevent flash of content before splash - will be removed by JS */
+      html.splash-active, 
+      html.splash-active body { 
+        overflow: hidden !important; 
+      }
+    </style>
   </head>
 
   <body>
+    <!-- FULL SCREEN SPLASH -->
+    <div class="splash" id="splash" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#000;z-index:999999;">
+      <div class="splash-content">
+        <div class="splash-logo-wrap">
+          <svg class="splash-ring" viewBox="0 0 200 200">
+            <circle class="ring-circle" cx="100" cy="100" r="90" />
+          </svg>
+          <div class="splash-logo">
+            <span class="sp-letter" style="--i:0">T</span>
+            <span class="sp-letter" style="--i:1">A</span>
+            <span class="sp-letter" style="--i:2">N</span>
+            <span class="sp-letter" style="--i:3">T</span>
+            <span class="sp-letter" style="--i:4">R</span>
+            <span class="sp-letter" style="--i:5">A</span>
+          </div>
+        </div>
+        <div class="splash-tagline">
+          <span class="sp-year">'26</span>
+          <span class="sp-text">AWAITS YOU</span>
+        </div>
+        <div class="splash-loader">
+          <div class="loader-bar"></div>
+        </div>
+      </div>
+    </div>  
+
     <div class="global-glow">
     <div class="glow glow-blue"></div>
     <div class="glow glow-pink"></div>
