@@ -1,3 +1,32 @@
+// ========== FULL SCREEN SPLASH ==========
+const splash = document.getElementById('splash');
+
+// Add class to lock scrolling
+document.documentElement.classList.add('splash-active');
+
+function hideSplash() {
+  if (splash) {
+    splash.style.opacity = '0';
+    setTimeout(() => {
+      splash.remove();
+      // Remove class to enable scrolling
+      document.documentElement.classList.remove('splash-active');
+      window.scrollTo(0, 0);
+    }, 800);
+  }
+}
+
+// Auto-hide after 4 seconds when page loads
+window.addEventListener('load', () => {
+  setTimeout(hideSplash, 4000);
+});
+
+// Click to skip
+if (splash) {
+  splash.addEventListener('click', hideSplash);
+}
+// ========== END SPLASH ==========
+
 const slider = document.getElementById("slider");
 let cards = Array.from(slider.children);
 
