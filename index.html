@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TANTRA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,17 +13,19 @@
   </head>
 
   <body>
+    <div class="global-glow">
     <div class="glow glow-blue"></div>
     <div class="glow glow-pink"></div>
+    </div>
 
     <!-- NAVBAR -->
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-logo">TANTRA</div>
           <div class="nav-links">
-          <a href="#" class="nav-link">Contact</a>
-          <button class="register-btn">
-          Register Now
+          <a class="nav-link contact-trigger">Contact</a>
+          <button class="register-btn" id="register-btn">
+  Register Now
           <span class="arrow-circle">
           <span class="arrow">↗</span>
           </span>
@@ -44,7 +46,6 @@
     </button>
   </div>
 </section>
-
 <section class="about-section section-bg">
   <div class="about-container">
 
@@ -66,33 +67,27 @@
       <div class="slider-track" id="slider">
 
         <div class="card big">
-          <img src="hackathon.jpeg" alt="">
+          <img src="WhatsApp Image 2026-02-03 at 12.05.05 AM.jpeg" alt="">
           <h3>48-Hour Hackathon</h3>
-          <p>Code, build and innovate continuously.</p>
         </div>
 
         <div class="card small">
-          <img src="workshop.jpeg" alt="">
-          <h3>Project Expo</h3>
-          <p>Showcase working prototypes.</p>
+          <img src="WhatsApp Image 2026-02-03 at 12.05.20 AM.jpeg" alt="">
+          <h3>Common Workshop</h3>
         </div>
 
         <div class="card small">
-          <img src="img3.png" alt="">
-          <h3>Expert Talks</h3>
-          <p>Learn from industry experts.</p>
+          <img src="WhatsApp Image 2026-02-03 at 12.05.36 AM.jpeg" alt="">
+          <h3>Intriguing competitions</h3>
         </div>
 
         <div class="card small">
-          <img src="img4.png" alt="">
-          <h3>Workshops</h3>
-          <p>Hands-on tech sessions.</p>
+          <img src="WhatsApp Image 2026-02-03 at 12.11.33 AM.jpeg" alt="">
+           <h3>Jam Sessions</h3>
         </div>
 
         <div class="card small">
           <img src="img5.png" alt="">
-          <h3>Team Collaboration</h3>
-          <p>Work on real-world problems.</p>
         </div>
 
       </div>
@@ -111,8 +106,159 @@
     >
   </div>
 </section>
+<section class="zoom-section">
+  <div class="zoom-frame">
+    <div class="content">
+      <h1>
+        Win From A Prize Pool Of <span>150K!</span>
+      </h1>
+      </div>
+    </div>
+  </section>
 
-<section class="contact-section">
+<section class="scroll hero-marquee">
+  <div class="marquee">
+    <div class="track">
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="track reverse">
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="track">
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="track reverse">
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+      <span>THE ULTIMATE TECHNICAL ODYSSEY&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="video-container">
+  <video autoplay loop muted playsinline>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+</div>
+</section>
+
+
+<section id="highlights">
+  <h1 class="highlights-title">Highlights</h1>
+
+  <div class="highlights-carousel">
+    <div class="carousel-container">
+
+      <div class="carousel-images">
+        <img src="images/highlights/1.png" class="carousel-image" data-title="Techtriad">
+        <img src="images/highlights/3.png" class="carousel-image" data-title="SpinX">
+        <img src="images/highlights/4.png" class="carousel-image" data-title="Tote Tales">
+        <img src="images/highlights/5.png" class="carousel-image" data-title="Codex">
+        <img src="images/highlights/6.png" class="carousel-image" data-title="Chipcraft">
+        <img src="images/highlights/7.png" class="carousel-image" data-title="Vertical Ventures">
+        <img src="images/highlights/8.png" class="carousel-image" data-title="Inventra">
+        <img src="images/highlights/9.png" class="carousel-image" data-title="Gridcraft">
+        <img src="images/highlights/10.png" class="carousel-image" data-title="Mecharena">
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn prev">❮</button>
+        <button class="carousel-btn next">❯</button>
+      </div>
+
+      <div class="carousel-indicators">
+        <span class="carousel-indicator active" data-index="0"></span>
+        <span class="carousel-indicator" data-index="1"></span>
+        <span class="carousel-indicator" data-index="2"></span>
+        <span class="carousel-indicator" data-index="3"></span>
+        <span class="carousel-indicator" data-index="4"></span>
+        <span class="carousel-indicator" data-index="5"></span>
+        <span class="carousel-indicator" data-index="6"></span>
+        <span class="carousel-indicator" data-index="7"></span>
+        <span class="carousel-indicator" data-index="8"></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+ <!-- START SECTION -->
+  <section id="codex-section">
+
+    <div class="wrapper">
+
+      <!-- TICKET -->
+      <div class="flip-wrapper">
+        <img src="assets/TANTRA TICKET FRONT 4.png" class="mobile-ticket" alt="">
+        <img src="assets/TANTRA TICKET BACK 3.png" class="mobile-ticket back" alt="">
+        <img src="assets/TANTRA TICKET FRONT 1.png" class="lap-ticket" alt="">
+        <img src="assets/TANTRA TICKET BACK 2.png" class="lap-ticket back" alt="">
+      </div>
+
+      <!-- CARD -->
+      <div class="card-group">
+
+        <div class="hack-card">
+          <div class="card-header">
+            CODEX <span>– 48-Hours Hackathon</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="card-content">
+            <ul class="features">
+  <li class="with-line">
+    <span class="bullet">•</span>
+    <span class="text">150K Prize Pool</span>
+    <span class="line"></span>
+  </li>
+  <li>
+    <span class="bullet">•</span>
+    <span class="text">2–4 Members</span>
+  </li>
+  <li>
+    <span class="bullet">•</span>
+    <span class="text">48 Hours duration</span>
+  </li>
+  <li>
+    <span class="bullet">•</span>
+    <span class="text">30 Activity Points</span>
+  </li>
+</ul>
+
+            <div class="price">
+              <h1>₹299</h1>
+              <span>Per person</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="register-bar">
+          <a href="codex.html"><button class="reg-btn">Register ↗</button></a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+<section class="contact-section" id="contact">
 
   <h2 class="contact-title">Connect with us!</h2>
 
@@ -176,6 +322,10 @@
 
 </section>
 
-<script src="main.js"></script>
+
+<script src="main.js">
+  
+</script>
+
 </body>
 </html>
