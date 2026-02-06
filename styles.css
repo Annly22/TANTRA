@@ -405,8 +405,13 @@ body > *:not(.global-glow) {
   z-index: 1;
   opacity: 0;
   transform-origin: left center;
+}
+
+/* Prevent animations during splash */
+html:not(.splash-active) .title-text {
   animation: titleSlideIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
 .title-26 {
   position: absolute;
   right: 0;
@@ -416,16 +421,23 @@ body > *:not(.global-glow) {
   width: 370px;
   z-index: 1;
   opacity: 0;
+}
+
+html:not(.splash-active) .title-26 {
   animation: title26SpringIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
 .title-boy {
   position: absolute;
   left: 55%;
   bottom: -60px;
   width: 530px;
   z-index: 3;
-  opacity: 1;
-  animation: boySpringIn 1.8s cubic-bezier(0.16, 1, 0.3, 1)forwards;
+  opacity: 0;
+}
+
+html:not(.splash-active) .title-boy {
+  animation: boySpringIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 @keyframes titleSlideIn {
   from {
@@ -455,14 +467,17 @@ body > *:not(.global-glow) {
 }
 @keyframes boySpringIn {
   0% {
+    opacity: 0;
     transform: translateX(120%) translateY(140px) scale(0.95);
   }
 
   65% {
+    opacity: 1;
     transform: translateX(-54%) translateY(-14px) scale(1.04);
   }
 
   100% {
+    opacity: 1;
     transform: translateX(-50%) translateY(0) scale(1);
   }
 }
@@ -512,6 +527,9 @@ body > *:not(.global-glow) {
 
 .cta-anim {
   opacity: 0;
+}
+
+html:not(.splash-active) .cta-anim {
   animation: ctaSpringIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: 0.9s;
 }
@@ -707,14 +725,17 @@ body > *:not(.global-glow) {
 }
   @keyframes boySpringIn {
     0% {
+      opacity: 0;
       transform: translateX(90%) translateY(140px) scale(0.95);
     }
 
     65% {
+      opacity: 1;
       transform: translateX(5%) translateY(-14px) scale(1.04);
     }
 
     100% {
+      opacity: 1;
       transform: translateX(12%) translateY(0) scale(1);
     }
   }
@@ -777,14 +798,17 @@ body > *:not(.global-glow) {
 }
   @keyframes boySpringIn {
     0% {
+      opacity: 0;
       transform: translateX(90%) translateY(140px) scale(0.95);
     }
 
     65% {
+      opacity: 1;
       transform: translateX(-5%) translateY(-14px) scale(1.04);
     }
 
     100% {
+      opacity: 1;
       transform: translateX(3%) translateY(0) scale(1);
     }
   }
