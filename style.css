@@ -22,6 +22,34 @@ body {
   position: relative;
 }
 
+/* FIX NAVBAR CLICK BLOCKING */
+.navbar,
+.nav-container,
+.nav-links,
+.nav-link {
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+/* Disable click capture on ALL decorative layers */
+.global-glow,
+.glow,
+.glow *,
+.hero,
+.hero *::before,
+.hero *::after {
+  pointer-events: none;
+}
+/* Re-enable interaction for CTA */
+.cta-layer,
+.get-started-btn,
+.get-started-btn * {
+  pointer-events: auto;
+}
+
+
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -39,14 +67,11 @@ body {
   align-items: center;
 }
 
-.nav-logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #ffffff;
-    text-decoration: none;
-    cursor: pointer;
+.nav-logo img {
+  height: 45px;        /* adjust as needed */
+  width: auto;         /* keeps aspect ratio */
+  display: block;
 }
-
 
 .nav-links {
   display: flex;
