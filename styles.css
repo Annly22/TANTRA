@@ -905,6 +905,9 @@ body > *:not(.global-glow) {
 
 /* Small phones */
 @media (max-width: 480px) {
+  .about-section{
+    margin-top: -98px;
+  }
 
   .about-title {
     font-size: 26px;
@@ -957,7 +960,7 @@ body > *:not(.global-glow) {
   .about-section {
     padding: 60px 16px;
     padding-top: 24px;
-    margin-top: -95px;
+    margin-top: -90px;
     overflow-x: hidden;
     position: relative;
  
@@ -1092,7 +1095,7 @@ body > *:not(.global-glow) {
 .carousel-image {
   position: absolute;
   width: 280px;
-  height: 350px;
+  height: 340px;
   object-fit: contain;
   border-radius: 15px;
   opacity: 0;
@@ -1163,7 +1166,7 @@ body > *:not(.global-glow) {
 /* INDICATORS */
 .carousel-indicators {
   position: absolute;
-  bottom: 15px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1711,18 +1714,20 @@ align-items: center;
   border: none;
 }
 
-/* ================= FOOTER ================= */
-
-.contact-footer {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 15px;
-  color: rgba(255,255,255,0.7);
-  font-weight: 400;
+/* ===================================
+   FOOTER
+   =================================== */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.footer p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
 /* ================= CONTACT RESPONSIVE ================= */
 
 @media (max-width: 1024px) {
@@ -1756,15 +1761,14 @@ align-items: center;
     margin: 24px auto 0;
   }
 
-  .contact-footer {
-    position: relative;
-    margin-top: 40px;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    text-align: center;
-  }
 }
+@media(max-width: 768px){
+.footer {
+padding-left: 20px;
+padding-right: 20px;
+}
+}
+ 
 
 @media (max-width: 480px) {
   .contact-title {
