@@ -22,7 +22,9 @@
     <nav class="navbar">
       <div class="nav-container">
         <div class="nav-logo">
-          <img src="assets/Group 91 1.svg" alt="TANTRA"/>
+          <a href="#" onclick="location.href='index.html'">
+    <img src="assets/Group 91 1.svg" alt="TANTRA">
+  </a>
     </div>
           <div class="nav-links">
           <a class="nav-link contact-trigger">Contact</a>
@@ -170,15 +172,15 @@
     <div class="carousel-container">
 
       <div class="carousel-images">
-        <img src="images/highlights/1.png" class="carousel-image" data-title="Techtriad">
-        <img src="images/highlights/3.png" class="carousel-image" data-title="SpinX">
-        <img src="images/highlights/4.png" class="carousel-image" data-title="Tote Tales">
-        <img src="images/highlights/5.png" class="carousel-image" data-title="Codex">
-        <img src="images/highlights/6.png" class="carousel-image" data-title="Chipcraft">
-        <img src="images/highlights/7.png" class="carousel-image" data-title="Vertical Ventures">
-        <img src="images/highlights/8.png" class="carousel-image" data-title="Inventra">
-        <img src="images/highlights/9.png" class="carousel-image" data-title="Gridcraft">
-        <img src="images/highlights/10.png" class="carousel-image" data-title="Mecharena">
+        <img src="assets/techyraid_20260210_194439_0003.svg" class="carousel-image" data-link="techtriad.html" data-title="Techtriad">
+        <img src="assets/spinx_20260210_194439_0001.svg" class="carousel-image" data-link="SpinX.html" data-title="SpinX">
+        <img src="assets/totetales_20260210_220529_0001.svg" class="carousel-image" data-link="tote.html" data-title="Tote Tales">
+        <img src="assets/codex_20260210_194439_0007.svg" class="carousel-image" data-link="codex.html" data-title="CodeX">
+        <img src="assets/chipcraft_20260210_220529_0000.svg" class="carousel-image" data-link="chipcraft.html" data-title="Chipcraft">
+        <img src="assets/verticalventures_20260210_194439_0005.svg" class="carousel-image" data-link="vertical.html" data-title="Vertical Ventures">
+        <img src="images/highlights/8.png" class="carousel-image" data-link="inventra.html" data-title="Inventra">
+        <img src="assets/gridcraft_20260210_194439_0006.svg" class="carousel-image" data-link="gridcraft.html" data-title="Gridcraft">
+        <img src="assets/mecharena_20260210_194439_0004.svg" class="carousel-image" data-link="mecharena.html" data-title="Mecharena">
       </div>
 
       <div class="carousel-controls">
@@ -228,12 +230,12 @@
             <ul class="features">
   <li class="with-line">
     <span class="bullet">•</span>
-    <span class="text">150K Prize Pool</span>
+    <span class="text">75K Prize Pool</span>
     <span class="line"></span>
   </li>
   <li>
     <span class="bullet">•</span>
-    <span class="text">2 - 4 Members</span>
+    <span class="text">3 - 4 Members</span>
   </li>
   <li>
     <span class="bullet">•</span>
@@ -246,8 +248,8 @@
 </ul>
 
             <div class="price">
-              <h1>₹299</h1>
-              <span>Per person</span>
+              <h1>₹2600</h1>
+              <span>Per Team</span>
             </div>
           </div>
         </div>
@@ -318,11 +320,21 @@
   </div>
 
   <!-- FOOTER -->
-  <div class="contact-footer">
-    2026 TANTRA’26 © All rights reserved
-  </div>
+  <footer class="footer">
+        <p>2025 TANTRA© All rights reserved</p>
+      </footer>
 
 </section>
+<script>
+  document.querySelectorAll('.carousel-image').forEach(img => {
+    img.addEventListener('click', () => {
+      const link = img.dataset.link;
+      if (link) {
+        window.location.href = link;
+      }
+    });
+  });
+</script>
 
 
 <script src="main.js">
