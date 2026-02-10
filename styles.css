@@ -87,12 +87,10 @@ body > *:not(.global-glow) {
   align-items: center;
 }
 
-.nav-logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #ffffff;
-    text-decoration: none;
-    cursor: pointer;
+.nav-logo img {
+  height: 56px;        /* adjust as needed */
+  width: auto;         /* keeps aspect ratio */
+  display: block;
 }
 
 
@@ -427,8 +425,9 @@ body > *:not(.global-glow) {
     justify-content: space-between;
   }
 
-  .nav-logo {
-    font-size: 1.2rem;
+  .nav-logo img {
+  height: 46px;
+  margin-top: -5px;
   }
 
   .nav-links {
