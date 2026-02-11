@@ -26,8 +26,10 @@
           <div class="nav-links">
           <a href="index.html#contact" class="nav-link">Contact</a>
 
-          <button class="register-btn" onclick=window.location.href='https://makemypass.com/event/codex'>
-          Register Now
+          <button
+  class="register-btn"
+  onclick="location.href='index.html#highlights'">
+  Register Now
           <span class="arrow-circle">
           <span class="arrow">↗</span>
           </span>
@@ -118,20 +120,115 @@
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
+            <ul class="custom-bullets">
             <li>Each team must consist of exactly 3 or 4 members</li>
             <li>Approximately 30 teams will be selected</li>
             <li>A valid student ID card is mandatory</li>
+            </ul>
           </div>
         </div>
+        <div class="accordion-item">
+  <button class="accordion-header">
+    <span>Problem Statements</span>
+    <span class="accordion-icon">+</span>
+  </button>
+  <div class="accordion-content">
+
+    <div class="problem-block">
+      <h4>Problem Statement 1: Discovering Work When Jobs Don’t Exist</h4>
+
+      <p class="problem-label">Context:</p>
+      <p>
+        Traditional software job roles are shrinking. Even experienced
+        full-stack developers face long-term unemployment due to hiring
+        freezes and AI-driven productivity gains.
+      </p>
+
+      <p class="problem-label">Problem:</p>
+      <p>
+        How can we systematically discover, define, and validate new
+        forms of paid technical work that are not currently advertised
+        as jobs, without assuming new hiring by companies?
+      </p>
+    </div>
+
+    <div class="problem-block">
+      <h4>Problem Statement 2: Talent Allocation Without Recruitment</h4>
+
+      <p class="problem-label">Context:</p>
+      <p>
+        Recruitment pipelines are collapsing - fewer openings, fewer
+        interviews, and high competition. Meanwhile, unused engineering
+        capacity continues to grow.
+      </p>
+
+      <p class="problem-label">Problem:</p>
+      <p>
+        How can skilled engineers be matched to real-world unmet needs
+        in the absence of formal job postings, recruiters, or hiring
+        budgets?
+      </p>
+    </div>
+
+    <div class="problem-block">
+      <h4>Problem Statement 3: Market Signaling in an Oversupplied Developer Economy</h4>
+
+      <p class="problem-label">Context:</p>
+      <p>
+        When everyone is “qualified,” resumes, portfolios, and interviews
+        fail to signal real economic value - especially for new engineers
+        entering a saturated market.
+      </p>
+
+      <p class="problem-label">Problem:</p>
+      <p>
+        How can engineers prove usefulness, reliability, and value to
+        the market before a job exists in a world structured by
+        organizations and credentials?
+      </p>
+    </div>
+    <div class="problem-block">
+      <h4>Problem Statement 4: Entry of New Engineers into a No-Hiring Industry</h4>
+
+      <p class="problem-label">Context:</p>
+      <p>
+        New engineering graduates are entering an industry that is no longer expanding its workforce, breaking the traditional “education → job” pathway.
+      </p>
+
+      <p class="problem-label">Problem:</p>
+      <p>
+        How can first-time engineers enter the professional ecosystem and gain economic participation when companies are not recruiting at entry level?
+      </p>
+    </div>
+    <div class="problem-block">
+      <h4>Problem Statement 5: Sustaining Engineering Livelihoods Without Long-Term Employment</h4>
+
+      <p class="problem-label">Context:</p>
+      <p>
+        Permanent employment is becoming rare, but most economic systems (loans, housing, insurance, identity) still assume stable jobs.
+      </p>
+
+      <p class="problem-label">Problem:</p>
+      <p>
+        How can engineers sustain livelihoods, professional growth, and economic security in a future where long-term employment is no longer the default?
+      </p>
+    </div>
+
+  </div>
+</div>
+
         <div class="accordion-item">
           <button class="accordion-header">
             <span>Team Rules</span>
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
-            <li>Abstract must be submitted based on the provided problem</li>
+            <ul class="custom-bullets">
+            <li>Abstract must be submitted based on any one of the provided problems</li>
             <li>Each participant pays 100 during abstract submission</li>
             <li>Selected teams must pay the remaining amount</li>
+            <li>Proposed solutions must focus on creating new opportunities and pathways without displacing or negatively impacting existing jobs or livelihoods</li>
+            </ul>
           </div>
         </div>
         <div class="accordion-item">
@@ -140,9 +237,11 @@
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
+            <ul class="custom-bullets">
             <li>Participants must maintain professional behavior</li>
             <li>Instructions from coordinators must be followed strictly</li>
             <li>Teams must be present during all evaluation rounds</li>
+            </ul>
           </div>
         </div>
         <div class="accordion-item">
@@ -151,9 +250,11 @@
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
+            <ul class="custom-bullets">
             <li>Originality and innovation of idea</li>
             <li>Technical methodology and implementation</li>
             <li>Presentation and communication skill</li>
+            </ul>
           </div>
         </div>
         <div class="accordion-item">
@@ -162,10 +263,12 @@
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-content">
+            <ul class="custom-bullets">
             <li>Feb 27: Hackathon beigns</li>
             <li>Feb 28 (morning): First evaluation</li>
             <li>Feb 28 (night): Second evaluation round</li>
             <li>Mar 1: Final PPT Presentation</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -178,7 +281,37 @@
     </section>
   </div>
   
-  <script src="script.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
+
+      const item = header.parentElement;
+      const content = item.querySelector(".accordion-content");
+      const icon = header.querySelector(".accordion-icon");
+
+      const isOpen = item.classList.contains("active");
+
+      // Close all accordions
+      document.querySelectorAll(".accordion-item").forEach(i => {
+        i.classList.remove("active");
+        i.querySelector(".accordion-content").style.height = "0px";
+        i.querySelector(".accordion-icon").textContent = "+";
+      });
+
+      // Open clicked accordion
+      if (!isOpen) {
+        item.classList.add("active");
+        content.style.height = content.scrollHeight + "px";
+        icon.textContent = "×"; // THIS fixes the + → ×
+      }
+
+    });
+  });
+
+});
+</script>
 </body>
 </html>
 
