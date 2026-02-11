@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -23,10 +24,36 @@
   <body>
     <!-- FULL SCREEN SPLASH -->
     <div class="splash" id="splash" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#000;z-index:999999;">
+      <!-- Floating particles -->
+      <div class="splash-particles">
+        <span class="particle" style="--x:10%;--y:20%;--d:3s;--s:0.4"></span>
+        <span class="particle" style="--x:25%;--y:70%;--d:4s;--s:0.6"></span>
+        <span class="particle" style="--x:40%;--y:15%;--d:5s;--s:0.3"></span>
+        <span class="particle" style="--x:55%;--y:80%;--d:3.5s;--s:0.5"></span>
+        <span class="particle" style="--x:70%;--y:30%;--d:4.5s;--s:0.35"></span>
+        <span class="particle" style="--x:85%;--y:60%;--d:3.8s;--s:0.45"></span>
+        <span class="particle" style="--x:15%;--y:50%;--d:5.2s;--s:0.25"></span>
+        <span class="particle" style="--x:60%;--y:45%;--d:4.2s;--s:0.55"></span>
+        <span class="particle" style="--x:90%;--y:10%;--d:3.3s;--s:0.4"></span>
+        <span class="particle" style="--x:35%;--y:90%;--d:4.8s;--s:0.3"></span>
+        <span class="particle" style="--x:50%;--y:55%;--d:5.5s;--s:0.2"></span>
+        <span class="particle" style="--x:75%;--y:75%;--d:3.6s;--s:0.5"></span>
+        <span class="particle" style="--x:5%;--y:85%;--d:4.1s;--s:0.35"></span>
+        <span class="particle" style="--x:45%;--y:5%;--d:5.8s;--s:0.45"></span>
+        <span class="particle" style="--x:80%;--y:40%;--d:3.9s;--s:0.6"></span>
+      </div>
+      <!-- Scan line -->
+      <div class="splash-scanline"></div>
       <div class="splash-content">
         <div class="splash-logo-wrap">
           <svg class="splash-ring" viewBox="0 0 200 200">
             <circle class="ring-circle" cx="100" cy="100" r="90" />
+          </svg>
+          <svg class="splash-ring splash-ring-2" viewBox="0 0 200 200">
+            <circle class="ring-circle ring-circle-2" cx="100" cy="100" r="80" />
+          </svg>
+          <svg class="splash-ring splash-ring-3" viewBox="0 0 200 200">
+            <circle class="ring-circle ring-circle-3" cx="100" cy="100" r="70" />
           </svg>
           <div class="splash-logo">
             <span class="sp-letter" style="--i:0">T</span>
@@ -38,7 +65,6 @@
           </div>
         </div>
         <div class="splash-tagline">
-          <span class="sp-year">'26</span>
           <span class="sp-text">AWAITS YOU</span>
         </div>
         <div class="splash-loader">
