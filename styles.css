@@ -55,6 +55,24 @@ body > *:not(.global-glow) {
 /* Disable click capture on ALL decorative layers */
 .global-glow,
 .glow,
+.glow::before,
+.glow::after {
+  pointer-events: none;
+}
+/* Prevent carousel UI layers from blocking image clicks */
+.carousel-controls,
+.carousel-indicators {
+  pointer-events: none;
+}
+
+/* Re-enable pointer events ONLY on the actual buttons */
+.carousel-controls button,
+.carousel-indicators span {
+  pointer-events: auto;
+}
+
+.global-glow,
+.glow,
 .glow *,
 .hero,
 .hero *::before,
