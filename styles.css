@@ -1100,7 +1100,7 @@ body > *:not(.global-glow) {
   border-radius: 15px;
   opacity: 0;
   transform: translateX(400px) scale(0.8);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 1.4s cubic-bezier(0.4, 0, 0.2, 1);
   left: 50%;
   top: 50%;
   margin-left: -140px;
