@@ -283,7 +283,7 @@ transform: translate(-80px, 80px);
   pointer-events: none;
 }
 .prizepool-bg-stack img {
-  width: 70%;          /* ⬅️ control size here */
+  width: 80%;          /* ⬅️ control size here */
   height: auto;
   max-width: 260px;    /* safety cap */
   opacity: 0.9;        /* optional: softer look */
@@ -811,3 +811,4 @@ transform: translate(0px, 80px);
     transform: translate(-80px, 80px);
   }
 }
+
