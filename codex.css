@@ -415,6 +415,10 @@ body {
   margin-bottom: 60px;
 }
 
+/* ===================================
+   ACCORDION (UPDATED – AUTO HEIGHT)
+   =================================== */
+
 .accordion-item {
   background: rgba(30, 30, 40, 0.5);
   backdrop-filter: blur(10px);
@@ -442,7 +446,6 @@ body {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: color 0.3s ease;
   text-align: left;
 }
 
@@ -453,34 +456,95 @@ body {
 .accordion-icon {
   color: #c231c9;
   font-size: 1.8rem;
-  font-weight: 300;
   transition: transform 0.3s ease;
 }
-
-.accordion-item.active .accordion-icon {
-  transform: rotate(45deg);
+.problem-block p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
+
+/* 🔑 IMPORTANT CHANGE */
 .accordion-content {
-  max-height: 0;
+  height: 0;
   overflow: hidden;
   padding: 0 30px;
-  transition: all 0.4s ease;
   opacity: 0;
+  transition:
+    height 0.45s ease,
+    opacity 0.25s ease;
 }
 
 .accordion-item.active .accordion-content {
-  max-height: 300px;
-  padding: 0 30px 25px 30px;
   opacity: 1;
+  padding: 0 30px 25px 30px;
 }
 
-.accordion-content p {
+/* ===================================
+   PROBLEM STATEMENT STYLING
+   =================================== */
+
+.problem-block {
+  margin-bottom: 30px;
+}
+
+.problem-block h4 {
   font-family: "Satoshi", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.problem-label {
+  font-weight: 600;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  color: #c231c9;
+}
+
+.problem-block p {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
+.custom-bullets {
+  list-style: none;          /* remove default bullets */
+  margin: 0;
+  padding: 0;
+}
+
+.custom-bullets li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 8px;
+
+  /* paragraph font */
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #cfd2ff;
+}
+
+.custom-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: inherit;
+}
+
+/* Mobile Fix */
+@media (max-width: 480px) {
+  .accordion-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 
 /* ===================================
    REGISTER BOTTOM BUTTON
