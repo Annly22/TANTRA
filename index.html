@@ -44,13 +44,13 @@
     <img src="assets/TANTRA_CHARACTER 2.png" class="title-boy" alt="Boy">
   </div>
   <div class="cta-layer">
-    <button class="get-started-btn">
+    <button class="get-started-btn" id="getStartedBtn">
       <span class="btn-text">Get Started</span>
       <span class="arrow">→</span>
     </button>
   </div>
 </section>
-<section class="about-section section-bg">
+<section class="about-section section-bg" id="about-tantra">
   <div class="about-container">
 
     <div class="about-text">
@@ -58,12 +58,7 @@
   What Makes <span class="highlight">TANTRA</span>’26
 </h1>
       <p class="about-desc">
-  TANTRA is a high-energy 48-hour hackathon where innovation, creativity,
-  and problem-solving collide. Experience cutting-edge project expos,
-  hands-on workshops, expert talks, and thrilling competitions under one roof.
-  Compete with the brightest minds and stand a chance to win from a prize pool
-  worth ₹1,50,000. TANTRA isn’t just an event — it’s a celebration of technology,
-  talent, and unforgettable moments.
+  TANTRA is a high energy three day technical fest from February 27 to March 1, featuring department led competitions, hands-on workshops, and an intense 48 hour hackathon, with a prize pool worth ₹1,50,000. Where innovation thrives, skills are tested, and ideas turn into impact.
 </p>
     </div>
 
@@ -178,7 +173,7 @@
         <img src="assets/codex_20260210_194439_0007.svg" class="carousel-image" data-link="codex.html" data-title="CodeX">
         <img src="assets/chipcraft_20260210_220529_0000.svg" class="carousel-image" data-link="chipcraft.html" data-title="Chipcraft">
         <img src="assets/verticalventures_20260210_194439_0005.svg" class="carousel-image" data-link="vertical.html" data-title="Vertical Ventures">
-        <img src="images/highlights/8.png" class="carousel-image" data-link="inventra.html" data-title="Inventra">
+        <img src="assets/Inventraaa.png" class="carousel-image" data-link="inventra.html" data-title="Inventra">
         <img src="assets/gridcraft_20260210_194439_0006.svg" class="carousel-image" data-link="gridcraft.html" data-title="Gridcraft">
         <img src="assets/mecharena_20260210_194439_0004.svg" class="carousel-image" data-link="mecharena.html" data-title="Mecharena">
       </div>
@@ -332,6 +327,11 @@
       if (link) {
         window.location.href = link;
       }
+    });
+  });
+   document.getElementById("getStartedBtn").addEventListener("click", () => {
+    document.getElementById("about-tantra").scrollIntoView({
+      behavior: "smooth"
     });
   });
 </script>
