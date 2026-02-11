@@ -63,8 +63,8 @@ const nextBtn = document.querySelector(".next");
 const carousel = document.querySelector(".carousel-container");
 
 let currentIndex = 0;
-let autoScrollInterval;
-const AUTO_SCROLL_TIME = 1500;
+//let autoScrollInterval;
+//const AUTO_SCROLL_TIME = 1500;
 
 function updateCarousel() {
   images.forEach((img, i) => {
@@ -85,45 +85,45 @@ function updateCarousel() {
   title.classList.add("title-animate");
 }
 
-function startAutoScroll() {
-  autoScrollInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateCarousel();
-  }, AUTO_SCROLL_TIME);
-}
+//function startAutoScroll() {
+  //autoScrollInterval = setInterval(() => {
+    //currentIndex = (currentIndex + 1) % images.length;
+    //updateCarousel();
+  //}, AUTO_SCROLL_TIME);
+//}
 
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
-}
+//function stopAutoScroll() {
+  //clearInterval(autoScrollInterval);
+//}
 
 nextBtn.onclick = () => {
-  stopAutoScroll();
+  //stopAutoScroll();
   currentIndex = (currentIndex + 1) % images.length;
   updateCarousel();
-  startAutoScroll();
+  //startAutoScroll();
 };
 
 prevBtn.onclick = () => {
-  stopAutoScroll();
+  //stopAutoScroll();
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   updateCarousel();
-  startAutoScroll();
+  //startAutoScroll();
 };
 
 indicators.forEach(dot => {
   dot.onclick = () => {
-    stopAutoScroll();
+    //stopAutoScroll();
     currentIndex = +dot.dataset.index;
     updateCarousel();
-    startAutoScroll();
+    //startAutoScroll();
   };
 });
 
-carousel.addEventListener("mouseenter", stopAutoScroll);
-carousel.addEventListener("mouseleave", startAutoScroll);
+//carousel.addEventListener("mouseenter", stopAutoScroll);
+//carousel.addEventListener("mouseleave", startAutoScroll);
 
 updateCarousel();
-startAutoScroll();
+//startAutoScroll();
 document.addEventListener("DOMContentLoaded", () => {
   const contactBtn = document.querySelector(".contact-trigger");
   const contactSection = document.querySelector(".contact-section");
