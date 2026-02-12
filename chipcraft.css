@@ -802,10 +802,15 @@ transform: translate(0px, 80px);
     justify-content: flex-start; /* stop centering */
   }
 
+  
   .prizepool-section {
-    transform: translateX(-620px)
+    transform: translateX(-20px,-100px)
+  }
+  .prizepool-bg-stack img{
+    width: 90%;
   }
  
 }
+
 
 
