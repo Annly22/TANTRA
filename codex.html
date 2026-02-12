@@ -102,11 +102,11 @@
         </div>
         <div class="detail-card">
           <h3 class="detail-title">Team Size</h3>
-          <p class="detail-text">2 - 4 Members</p>
+          <p class="detail-text">3 - 4 Members</p>
         </div>
         <div class="detail-card">
           <h3 class="detail-title">Registration Fee</h3>
-          <p class="detail-text">2600/- per team</p>
+          <p class="detail-text">2500/- per team</p>
         </div>
       </div>
     </section>
@@ -122,6 +122,8 @@
           <div class="accordion-content">
             <ul class="custom-bullets">
             <li>Each team must consist of exactly 3 or 4 members</li>
+            <li>Each participant pays 100 during abstract submission</li>
+            <li>Selected teams must pay the remaining amount</li>
             <li>Approximately 30 teams will be selected</li>
             <li>A valid student ID card is mandatory</li>
             </ul>
@@ -225,8 +227,6 @@
           <div class="accordion-content">
             <ul class="custom-bullets">
             <li>Abstract must be submitted based on any one of the provided problems</li>
-            <li>Each participant pays 100 during abstract submission</li>
-            <li>Selected teams must pay the remaining amount</li>
             <li>Proposed solutions must focus on creating new opportunities and pathways without displacing or negatively impacting existing jobs or livelihoods</li>
             </ul>
           </div>
@@ -282,69 +282,113 @@
   </div>
   
   <script>
-document.addEventListener("DOMContentLoaded", () => {
+/* ---------------------------
+   Scroll Animations
+----------------------------*/
+function initScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".detail-card, .accordion-item").forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    observer.observe(el);
+  });
+}
+
+/* ---------------------------
+   Accordion
+----------------------------*/
+function initAccordion() {
   document.querySelectorAll(".accordion-header").forEach(header => {
     header.addEventListener("click", () => {
-
       const item = header.parentElement;
       const content = item.querySelector(".accordion-content");
       const icon = header.querySelector(".accordion-icon");
 
       const isOpen = item.classList.contains("active");
 
-      // Close all accordions
       document.querySelectorAll(".accordion-item").forEach(i => {
         i.classList.remove("active");
         i.querySelector(".accordion-content").style.height = "0px";
         i.querySelector(".accordion-icon").textContent = "+";
       });
 
-      // Open clicked accordion
       if (!isOpen) {
         item.classList.add("active");
         content.style.height = content.scrollHeight + "px";
-        icon.textContent = "×"; // THIS fixes the + → ×
+        icon.textContent = "×";
       }
-
     });
   });
+}
 
-});
+/* ---------------------------
+   Countdown Timer
+----------------------------*/
 function initCountdown() {
-  const targetDate = new Date('2026-02-28T00:00:00').getTime();
+  const targetDate = new Date("2026-02-28T00:00:00").getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = targetDate - now;
 
     if (distance < 0) {
-      document.getElementById('days').textContent = '00';
-      document.getElementById('hours').textContent = '00';
-      document.getElementById('minutes').textContent = '00';
+      days.textContent = "00";
+      hours.textContent = "00";
+      minutes.textContent = "00";
       return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor(
-      (distance % (1000 * 60 * 60)) / (1000 * 60)
-    );
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const m = Math.floor((distance / (1000 * 60)) % 60);
 
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    days.textContent = String(d).padStart(2, "0");
+    hours.textContent = String(h).padStart(2, "0");
+    minutes.textContent = String(m).padStart(2, "0");
   }
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
 }
 
-initCountdown();
+/* ---------------------------
+   Blob Parallax
+----------------------------*/
+window.addEventListener("mousemove", (e) => {
+  const blob1 = document.querySelector(".blob-1");
+  const blob2 = document.querySelector(".blob-2");
+
+  const x = e.clientX / window.innerWidth;
+  const y = e.clientY / window.innerHeight;
+
+  if (blob1) blob1.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
+  if (blob2) blob2.style.transform = `translate(${x * -20}px, ${y * -20}px)`;
+});
+
+/* ---------------------------
+   Init Everything
+----------------------------*/
+document.addEventListener("DOMContentLoaded", () => {
+  initCountdown();
+  initAccordion();
+  initScrollAnimations();
+});
 </script>
+
 </body>
 </html>
-
 
