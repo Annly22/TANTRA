@@ -112,4 +112,5 @@ window.addEventListener('mousemove', (e) => {
   if (blob2) {
     blob2.style.transform = `translate(${mouseX * -20}px, ${mouseY * -20}px)`;
   }
+
 });
