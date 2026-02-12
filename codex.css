@@ -508,7 +508,7 @@ body {
 .problem-block p {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.75);
+  color: #cfd2ff;
 }
 .custom-bullets {
   list-style: none;          /* remove default bullets */
@@ -871,4 +871,5 @@ transform: translate(0px, 80px);
     transform: translate(-80px, 80px);
   }
 }
+
 
