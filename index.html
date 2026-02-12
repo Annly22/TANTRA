@@ -10,9 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Prevent flash of content before splash - will be removed by JS */
+      html.splash-active, 
+      html.splash-active body { 
+        overflow: hidden !important; 
+      }
+    </style>
   </head>
 
   <body>
+    
     <div class="global-glow">
     <div class="glow glow-blue"></div>
     <div class="glow glow-pink"></div>
@@ -174,7 +182,7 @@
         <img src="assets/codex_20260210_194439_0007.svg" class="carousel-image" data-link="codex.html" data-title="CodeX">
         <img src="assets/chipcraft_20260210_220529_0000.svg" class="carousel-image" data-link="chipcraft.html" data-title="Chipcraft">
         <img src="assets/verticalventures_20260210_194439_0005.svg" class="carousel-image" data-link="vertical.html" data-title="Vertical Ventures">
-        <img src="assets/Inventraaa.png" class="carousel-image" data-link="inventra.html" data-title="Inventra">
+        <img src="assets/Inventra.jpeg" class="carousel-image" data-link="inventra.html" data-title="Inventra">
         <img src="assets/gridcraft_20260210_194439_0006.svg" class="carousel-image" data-link="gridcraft.html" data-title="Gridcraft">
         <img src="assets/mecharena_20260210_194439_0004.svg" class="carousel-image" data-link="mecharena.html" data-title="Mecharena">
       </div>
@@ -296,7 +304,7 @@
   <p>Call us</p>
   <span>
     <i class="fa-solid fa-phone"></i>
-    +91 7034989327
+    +91 987654321
   </span>
 
   <p>Instagram</p>
